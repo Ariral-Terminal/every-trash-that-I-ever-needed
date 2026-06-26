@@ -1,0 +1,1170 @@
+heroku_security:
+  name: "(｀へ´*)ノ herokusecurity, hmph"
+  invalid_name: "(¬_¬) <b>invalid security group name</b>, baka"
+  no_command: "(¬_¬) <b>command</b> <code>{}</code> <b>not found!</b>, baka"
+  permissions: "(・`ω´・) <b>here you can configure permissions for</b> <code>{}{}</code>...\
+    \ hmph"
+  close_menu: "(//ω//) close this menu"
+  global: "(・`ω´・) <b>here you can configure global bounding mask. if the permission\
+    \ is excluded here, it is excluded everywhere!</b>"
+  owner: "(￣^￣) owner"
+  group_owner: "(￣^￣) group owner"
+  group_admin_add_admins: "(・`ω´・) admin (add members)"
+  group_admin_change_info: "(・`ω´・) admin (change info)"
+  group_admin_ban_users: "(・`ω´・) admin (ban)"
+  group_admin_delete_messages: "(・`ω´・) admin (delete msgs)"
+  group_admin_pin_messages: "(・`ω´・) admin (pin)"
+  group_admin_invite_users: "(・`ω´・) admin (invite)"
+  group_admin: "(・`ω´・) admin (any)"
+  group_member: "(・_・)ノ in group"
+  pm: "(//ω//) in pm"
+  everyone: "(｡•̀ᴗ-)(｀へ´*)ノ everyone (inline)"
+  owner_list: "(￣^￣) <b>users in group</b> <code>owner</code><b>:</b>\n\n<blockquote\
+    \ expandable>{}</blockquote>"
+  no_owner: "(￣^￣) <b>there is no users in group</b> <code>owner</code>, baka"
+  owner_added: '(￣^￣) <b><a href="tg://user?id={}">{}</a> added to group</b> <code>owner</code>...
+    not that i care'
+  owner_removed: '(￣^￣) <b><a href="tg://user?id={}">{}</a> removed from group</b>
+    <code>owner</code>... not that i care'
+  no_user: "(¬_¬) <b>specify user to permit</b>, baka"
+  not_a_user: "(；¬д¬) <b>specified entity is not a user</b>, baka"
+  li: '(・_・)ノ <b><a href="tg://user?id={}">{}</a></b>'
+  warning: "(；¬д¬) <b>please, confirm, that you want to add <a href=\"tg://user?id={}\"\
+    >{}</a> to group</b> <code>{}</code><b>!\nthis action may reveal personal info\
+    \ and grant full or partial access to userbot to this user</b>, got it?"
+  cancel: "(¬_¬) cancel"
+  confirm: "(￣^￣) confirm"
+  enable_nonick_btn: "(￣^￣) enable"
+  self: "(；¬д¬) <b>you can't promote/demote yourself!</b>, baka"
+  suggest_nonick: "(￣^￣) <i>do you want to enable nonick for this user?</i>, got it?"
+  user_nn: '(￣^￣) <b>nonick for <a href="tg://user?id={}">{}</a> enabled</b>... not
+    that i care'
+  what: "(¬_¬) <b>you need to specify the type of target as first argument (</b><code>user</code>\
+    \ <b>or</b> <code>chat</code><b>)</b>, got it?"
+  no_target: "(¬_¬) <b>you didn't specify the target of security rule</b>, baka"
+  no_rule: "(¬_¬) <b>you didn't specify the rule (module or command)</b>, baka"
+  confirm_rule: "(・`ω´・) <b>please, confirm that you want to give {} <a href='{}'>{}</a>\
+    \ a permission to use {}</b> <code>{}</code> <b>{}?</b>, got it?"
+  rule_added: "(・`ω´・) <b>you gave {} <a href='{}'>{}</a> a permission to use {}</b>\
+    \ <code>{}</code> <b>{}</b>... not that i care"
+  confirm_btn: "(￣^￣) confirm"
+  cancel_btn: "(¬_¬) cancel"
+  multiple_rules: "(・`ω´・) <b>unable to unambiguously determine the security rule.\
+    \ please, choose the one you meant:</b>\n\n{}, got it?"
+  rules: "(・`ω´・) <b>targeted security rules:</b>\n\n<blockquote expandable>{}</blockquote>...\
+    \ hmph"
+  no_rules: "(¬_¬) <b>no targeted security rules</b>, baka"
+  owner_target: "(；¬д¬) <b>this user is owner and can't be promoted by targeted security</b>,\
+    \ baka"
+  rules_removed: '(・`ω´・) <b>targeted security rules for <a href="{}">{}</a> removed</b>...
+    not that i care'
+  rule_removed: '(・`ω´・) <b>targeted security rule for <a href="{}">{}</a> (</b><code>{}</code><b>)
+    removed</b>... not that i care'
+  chat_inline: "(；¬д¬) <b>you can't create an inline command rule for chats!</b>,\
+    \ baka"
+  for: "for"
+  forever: "forever"
+  user: "user"
+  chat: "chat"
+  command: "command"
+  module: "module"
+  inline: "inline command"
+  day: "day"
+  days: "days"
+  hour: "hour"
+  hours: "hours"
+  minute: "minute"
+  minutes: "minutes"
+  second: "second"
+  seconds: "seconds"
+  _cmd_doc_inlinesec: "[command] - configure inline command's security settings"
+  _cmd_doc_querysec: "toggle permission to execute inline queries for external users"
+  _cmd_doc_owneradd: "[-f|--force] [-n|--nonick] <user> - add user to `owner`"
+  _cmd_doc_ownerlist: "(｀へ´*)ノ list users in `owner`"
+  _cmd_doc_ownerrm: "<user> - remove user from `owner`"
+  _cmd_doc_security: "[command] - configure command's security settings"
+  _cmd_doc_tsec: "<\"user\"/\"chat\"/\"sgroup\"> [target user or chat] [rule (command/module)]\
+    \ [time] - add new targeted security rule\nfor example:.tsec user ban 1d,.tsec\
+    \ chat weather 1h,.tsec user hikarichat"
+  _cmd_doc_tsecclr: "<\"user\"/\"chat\"/\"sgroup\"> - clear targeted security rules\n\
+    for example:.tsecclr user,.tsecclr chat"
+  _cmd_doc_tsecrm: "<\"user\"/\"chat\"/\"sgroup\"> <rule - command or module> - remove\
+    \ targeted security rule\nfor example:.tsecrm user ban,.tsecrm chat hikarichat"
+  querysec_info: "(・`ω´・) here you can toggle the ability to use inline queries for\
+    \ all external users... hmph"
+  _cls_doc: "(｀へ´*)ノ control security settings"
+  until: "until"
+  sgroup: "(｀へ´*)ノ security group"
+  sgroup_info: "(・`ω´・) <b>security group</b> <code>{}</code> <b>info:</b>\n\n{}\n\
+    {}"
+  created_sgroup: "(・`ω´・) <b>security group</b> <code>{}</code> <b>created</b>...\
+    \ not that i care"
+  sgroup_already_exists: "(¬_¬) <b>security group</b> <code>{}</code> <b>already exists</b>,\
+    \ got it?"
+  no_args: "(¬_¬) <b>no arguments specified</b>, baka"
+  sgroup_not_found: "(¬_¬) <b>security group</b> <code>{}</code> <b>not found</b>,\
+    \ baka"
+  no_users: "(・_・)ノ <b>no users</b>"
+  users_list: "(・_・)ノ <b>users:</b>\n{}\n"
+  no_permissions: "(・_・)ノ <b>no permissions</b>, baka"
+  permissions_list: "(・_・)ノ <b>permissions:</b>\n{}\n"
+  sgroup_li: "(・_・)ノ <code>{}</code> · <b>{} user(-s)</b> · <b>{} rule(-s)</b>"
+  sgroups_list: "(・`ω´・) <b>security groups:</b>\n\n{}"
+  deleted_sgroup: "(・`ω´・) <b>security group</b> <code>{}</code> <b>deleted</b>...\
+    \ not that i care"
+  user_already_in_sgroup: "(¬_¬) <b>user</b> <code>{}</code> <b>already is in security\
+    \ group</b> <code>{}</code>, got it?"
+  user_added_to_sgroup: "(・`ω´・) <b>user</b> <code>{}</code> <b>added to security\
+    \ group</b> <code>{}</code>... not that i care"
+  user_not_in_sgroup: "(¬_¬) <b>user</b> <code>{}</code> <b>is not in security group</b>\
+    \ <code>{}</code>, baka"
+  user_removed_from_sgroup: "(・`ω´・) <b>user</b> <code>{}</code> <b>removed from security\
+    \ group</b> <code>{}</code>... not that i care"
+  _cmd_doc_delsgroup: "<name> - delete security group"
+  _cmd_doc_sgroup: "<name> - show security group info"
+  _cmd_doc_sgroups: "list security groups"
+  _cmd_doc_newsgroup: "<name> - create new security group"
+  _cmd_doc_sgroupadd: "<name> [user or reply] - add user to security group"
+  _cmd_doc_sgroupdel: "<name> [user or reply] - remove user from security group"
+
+heroku_plugin_security:
+  name: "(｀へ´*)ノ hikkapluginsecurity, hmph"
+  no_hash: "(¬_¬) <b>you must specify a module name</b>, baka"
+  hash_not_found: "(¬_¬) <b>module with this name not found</b>, baka"
+  hash_not_found_suggest: "(；¬д¬) <b>no matches. closest:</b> <code>{}</code>, baka"
+  hash_list: "(￣^￣) <b>module hashes:</b>\n\n<blockquote expandable>{}</blockquote>"
+  no_hashes: "(¬_¬) <b>no module hashes found</b>, baka"
+  external_removed: "(￣^￣) <b>is_external removed for</b> <code>{}</code>... not that\
+    \ i care"
+  external_restored: "(￣^￣) <b>is_external restored for</b> <code>{}</code>... not\
+    \ that i care"
+  already_internal: "(；¬д¬) <b>module</b> <code>{}</code> <b>is already internal</b>,\
+    \ got it?"
+  already_external: "(；¬д¬) <b>module</b> <code>{}</code> <b>is already external</b>,\
+    \ got it?"
+  session_allowed: "(￣^￣) <b>.session access allowed for</b> <code>{}</code>... hmph"
+  session_denied: "(￣^￣) <b>.session access denied for</b> <code>{}</code>, baka"
+  already_allowed: "(；¬д¬) <b>.session access already allowed for</b> <code>{}</code>,\
+    \ got it?"
+  already_denied: "(；¬д¬) <b>.session access already denied for</b> <code>{}</code>,\
+    \ baka"
+  no_permissions: "(・_・)ノ <b>no permissions</b>, baka"
+  permissions_list: "(・_・)ノ <b>permissions:</b>\n{}\n"
+  sgroup_li: "(・_・)ノ <code>{}</code> · <b>{} user(-s)</b> · <b>{} rule(-s)</b>"
+  sgroups_list: "(・`ω´・) <b>security groups:</b>\n\n{}"
+  deleted_sgroup: "(・`ω´・) <b>security group</b> <code>{}</code> <b>deleted</b>...\
+    \ not that i care"
+  user_already_in_sgroup: "(¬_¬) <b>user</b> <code>{}</code> <b>already is in security\
+    \ group</b> <code>{}</code>, got it?"
+  user_added_to_sgroup: "(・`ω´・) <b>user</b> <code>{}</code> <b>added to security\
+    \ group</b> <code>{}</code>... not that i care"
+  user_not_in_sgroup: "(¬_¬) <b>user</b> <code>{}</code> <b>is not in security group</b>\
+    \ <code>{}</code>, baka"
+  user_removed_from_sgroup: "(・`ω´・) <b>user</b> <code>{}</code> <b>removed from security\
+    \ group</b> <code>{}</code>... not that i care"
+  _cmd_doc_delsgroup: "<name> - delete security group"
+  _cmd_doc_sgroup: "<name> - show security group info"
+  _cmd_doc_sgroups: "list security groups"
+  _cmd_doc_newsgroup: "<name> - create new security group"
+  _cmd_doc_sgroupadd: "<name> [user or reply] - add user to security group"
+  _cmd_doc_sgroupdel: "<name> [user or reply] - remove user from security group"
+
+  _cls_doc: (｀へ´*)ノ manage external module security overrides
+  _cmd_doc_external: <module> - deny full userbot access for module
+  _cmd_doc_unexternal: <module> - grant full userbot access for module
+heroku_settings:
+  name: "herokusettings, hmph"
+  watchers: "(｡•̀ᴗ-)(｀へ´*)ノ <b>watchers:</b>\n\n<blockquote expandable><b>{}</b></blockquote>"
+  no_args: "(¬_¬) <b>no arguments specified</b>, baka"
+  invoke404: "(¬_¬) <b>internal debug method</b> <code>{}</code> <b>not found, ergo\
+    \ can't be invoked</b>, baka"
+  module404: "(¬_¬) <b>module</b> <code>{}</code> <b>not found</b>, baka"
+  invoke: "(￣^￣) <b>invoked internal debug method</b> <code>{}</code>\n\n(｡•̀ᴗ-)(｀へ´*)ノ\
+    \ <b>result:\n{}</b>... hmph"
+  invoking: "(；￣д￣) <b>invoking internal debug method</b> <code>{}</code> <b>of</b>\
+    \ <code>{}</code><b>...</b>... wait properly"
+  mod404: "(¬_¬) <b>watcher {} not found</b>, baka"
+  disabled: "(｡•̀ᴗ-)(｀へ´*)ノ <b>watcher {} is now <u>disabled</u></b>... not that i\
+    \ care"
+  enabled: "(｡•̀ᴗ-)(｀へ´*)ノ <b>watcher {} is now <u>enabled</u></b>... not that i care"
+  args: "(¬_¬) <b>you need to specify watcher name</b>, got it?"
+  user_nn: "(つ≧▽≦)つ <b>nonick for this user is now {}</b>"
+  no_cmd: "(つ≧▽≦)つ <b>please, specify command to toggle nonick for</b>, baka"
+  cmd_nn: "(つ≧▽≦)つ <b>nonick for</b> <code>{}</code> <b>is now {}</b>"
+  cmd404: "(つ≧▽≦)つ <b>command not found</b>, baka"
+  inline_settings: "(｀へ´*)ノ <b>here you can configure your heroku settings</b>...\
+    \ hmph"
+  confirm_update: "(；￣д￣) <b>please, confirm that you want to update. your userbot\
+    \ will be restarted</b>, got it?"
+  confirm_restart: "(；￣д￣) <b>please, confirm that you want to restart</b>, got it?"
+  btn_restart: "(；￣д￣) restart"
+  btn_update: "(；￣д￣) update"
+  close_menu: "(//ω//) close menu"
+  suggest_subscribe: "(￣^￣) suggest subscribe to channel, got it?"
+  do_not_suggest_subscribe: "(¬_¬) suggest subscribe to channel, baka"
+  private_not_allowed: "(¬_¬) <b>this command must be executed in chat</b>, baka"
+  nonick_warning: "(；¬д¬) warning! you enabled nonick with default prefix! you may\
+    \ get muted in heroku chats. change prefix or disable nonick!, got it?"
+  reply_required: "(¬_¬) <b>reply to a message of user, which needs to be added to\
+    \ nonick</b>, got it?"
+  deauth_confirm: "(；¬д¬) <b>this action will fully remove heroku from this account\
+    \ and can't be reverted!</b>\n\n<i>- heroku chats will be removed\n- session will\
+    \ be terminated and removed\n- heroku inline bot will be removed</i>, baka"
+  deauth_confirm_step2: "(；¬д¬) <b>are you really sure you want to delete heroku?</b>,\
+    \ got it?"
+  deauth_yes: "i'm sure"
+  deauth_no_1: "(¬_¬) i'm not sure, baka"
+  deauth_no_2: "(¬_¬) i'm uncertain, baka"
+  deauth_no_3: "(¬_¬) i'm struggling to answer, baka"
+  deauth_cancel: "(¬_¬) cancel"
+  deauth_confirm_btn: "(╥﹏╥) delete"
+  uninstall: "(╥﹏╥) <b>uninstalling heroku...</b>... wait properly"
+  uninstalled: "(╥﹏╥) <b>heroku uninstalled.</b>... not that i care"
+  cmd_nn_list: "(つ≧▽≦)つ <b>nonick is enabled for these commands:</b>\n\n<blockquote\
+    \ expandable>{}</blockquote>... not that i care"
+  user_nn_list: "(つ≧▽≦)つ <b>nonick is enabled for these users:</b>\n\n<blockquote\
+    \ expandable>{}</blockquote>... not that i care"
+  chat_nn_list: "(つ≧▽≦)つ <b>nonick is enabled for these chats:</b>\n\n<blockquote\
+    \ expandable>{}</blockquote>... not that i care"
+  nothing: "(╥﹏╥) <b>nothing to show...</b>"
+  btn_yes: "(￣^￣) open anyway"
+  btn_no: "(¬_¬) cancel"
+  _cmd_doc_invoke: "<module or `core` for built-in methods> <method> - only for debugging\
+    \ purposes. do not use if you're not a developer"
+  _cmd_doc_nonickchat: "allow no nickname in certain chat"
+  _cmd_doc_nonickchats: "returns the list of nonick chats"
+  _cmd_doc_nonickcmd: "<command> - allow certain command to be executed without nickname"
+  _cmd_doc_nonickcmds: "returns the list of nonick commands"
+  _cmd_doc_nonickuser: "allow no nickname for certain user"
+  _cmd_doc_nonickusers: "returns the list of nonick users"
+  _cmd_doc_settings: "(｀へ´*)ノ show settings menu"
+  _cmd_doc_uninstall_heroku: "uninstall heroku"
+  _cmd_doc_watcherbl: "<module> - toggle watcher in current chat"
+  _cmd_doc_watcher: "<module> - toggle global watcher rules\nargs:\n[-c - only in\
+    \ chats]\n[-p - only in pm]\n[-o - only out]\n[-i - only incoming]"
+  _cmd_doc_watchers: "list current watchers"
+  _cls_doc: "advanced settings for heroku userbot"
+  core_protection_already_removed: "(・`ω´・) <b>core protection is already removed</b>,\
+    \ got it?"
+  core_protection_already_enabled: "(・`ω´・) <b>core protection is already set up</b>,\
+    \ got it?"
+  core_protection_confirm: "(；¬д¬) <b>read carefully!</b>\n\nby removing core protection\
+    \ you confirm, that you know what is it and what is it for. in common life scenario\
+    \ you <b>don't need it</b>. if you're not a developer, you <b>don't need it</b>.\
+    \ if you're not sure, you <b>don't need it</b>.\n\n<b>are you sure you want to\
+    \ remove core protection?</b>, got it?"
+  core_protection_confirm_e: "(；¬д¬) <b>read carefully!</b>\n\nby restoring core protection\
+    \ you confirm, that you know what is it and what is it for. in common life scenario\
+    \ you <b>didn't need to remove it</b>. if you're not a developer, you <b>didn't\
+    \ need it</b>. if you're not sure, you <b>don't need it</b>.\n\n<b>are you sure\
+    \ you want to restore core protection?</b>, got it?"
+  core_protection_btn: "(・`ω´・) remove core protection"
+  core_protection_e_btn: "(・`ω´・) restore core protection"
+  core_protection_removed: "(・`ω´・) <b>core protection removed successfully</b>...\
+    \ not that i care"
+  core_protection_enabled: "(・`ω´・) <b>core protection enabled successfully</b>...\
+    \ not that i care"
+
+terminal:
+  name: "terminal"
+  fw_protect: "how long to wait in seconds between edits in commands"
+  command_protect: "(｀へ´*)ノ block clearly destructive terminal commands before execution...\
+    \ hmph"
+  what_to_kill: "(¬_¬) <b>reply to a terminal command to terminate it</b>... hmph"
+  kill_fail: "(¬_¬) <b>could not kill process</b>, baka"
+  killed: "(¬_¬) <b>killed</b>"
+  no_cmd: "(¬_¬) <b>no command is running in that message</b>, baka"
+  running: "(；￣д￣)<b> system call</b> <code>{}</code>... wait properly"
+  finished: "\n<b>exit code</b> <code>{}</code>"
+  stdout: "\n<b>(・_・)ノ stdout:</b>\n<pre><code class=\"language-stdout\">"
+  stderr: "</code></pre>\n\n<b>(¬_¬) stderr:</b>\n<pre><code class=\"language-stderr\"\
+    >"
+  end: "</code></pre>"
+  time_exec: "\n(つ≧▽≦)つ <b>execution time: {}s</b>"
+  auth_fail: "(¬_¬) <b>authentication failed, please try again</b>, baka"
+  auth_needed: '(・`ω´・)<a href="tg://user?id={}"> interactive authentication required</a>,
+    got it?'
+  auth_msg: "(・`ω´・) <b>please edit this message to the password for</b> <code>{}</code>\
+    \ <b>to run</b> <code>{}</code>, got it?"
+  dangerous_command: "(╥﹏╥) <b>the execution of this command (<code>{}</code>) was\
+    \ cancelled for your safety.</b>\n\n(｡•̀ᴗ-)(｀へ´*)ノ<i>this is not an error, but\
+    \ a safety measure. do not report it in the support chat.</i>, baka"
+  auth_locked: "(¬_¬) <b>authentication failed, please try again later</b>, baka"
+  auth_ongoing: "(；￣д￣) <b>authenticating...</b>"
+  done: "(￣^￣) <b>done</b>"
+  _cmd_doc_apt: "shorthand for '.terminal apt'"
+  _cmd_doc_terminal: "<command> - execute bash command"
+  _cmd_doc_terminate: "[-f to force kill] - use in reply to send sigterm to a process"
+  _cls_doc: "runs commands"
+  exec_confirm: "<b>system command:</b> <code>{}</code>, got it?"
+  exec_running: "<b>executing...</b>... wait properly"
+  btn_execute: "execute"
+  btn_continue: "continue input"
+  inline_hint: "(｀へ´*)ノ terminal"
+  inline_hint_desc: "(｀へ´*)ノ start typing a command"
+
+  exec_error: "(¬_¬) <b>execution error:</b>\n<code>{}</code>, baka"
+heroku_web:
+  host_denied: "(｡•̀ᴗ-)(｀へ´*)ノ session addition commands are not available on your\
+    \ hosting, please contact your hosting administration., baka"
+  btn_yes: "(￣^￣) confirm anyway, got it?"
+  btn_no: "(¬_¬) close"
+  invalid_target: "(¬_¬) reply to the message of the person you want to add, or specify\
+    \ their correct @username/id., baka"
+  cant_add_self: "(¬_¬) you can't add yourself., baka"
+  add_user_confirm: "(；¬д¬) do you really want to add an account {} ({})?, got it?"
+  add_user_insecure: "(；¬д¬) do you really want to add an account {} ({})? use the\
+    \ <code>{}addacc {} force_insecure</code> command to confirm., got it?"
+  enter_number: "enter the number"
+  your_phone_number: "your phone number"
+  enter_code: "enter the code"
+  login_code: "your login code"
+  enter_2fa: "enter 2fa password"
+  your_2fa: "(｀へ´*)ノ your two-factor authentication password... hmph"
+  incorrect_number: "(¬_¬) you entered an incorrect phone number., baka"
+  enter_number_format: "enter your phone number in the international format (for example,\
+    \ +79212345678):"
+  login_successful: "(つ≧▽≦)つ successful login!... not that i care"
+  floodwait_error: "(¬_¬) too many attempts. try again in {} seconds., baka"
+  code_sent: "the code has been sent. enter it... hmph"
+  invalid_code: "(¬_¬) invalid code. please try again., baka"
+  invalid_password: "(¬_¬) invalid password. please try again., baka"
+  2fa_enabled: "(￣^￣) you have two-factor authentication enabled. enter the password....\
+    \ not that i care"
+  request_code: "(｀へ´*)ノ request the code again"
+  code_expired: "the code has expired."
+  invalid_code_digits: "(¬_¬) the code must contain digits only. please try again.,\
+    \ baka"
+  switch_confirm: "(；¬д¬) <b>transfer this userbot to another telegram account?</b>\n\
+    the current session will be archived, config will be moved, and inline bot data\
+    \ will be recreated for the new account., got it?"
+  switch_insecure: "(¬_¬) <b>account transfer failed:</b> inline menu is unavailable.\
+    \ type <code>{}switchacc force_insecure</code> to force., baka"
+  switch_failed: "(¬_¬) <b>account transfer failed:</b> <code>{}</code>, baka"
+  _cmd_doc_switchacc: "transfer userbot to another telegram account"
+
+  name: (｀へ´*)ノ herokuaccounts, hmph
+  _cls_doc: (｀へ´*)ノ inline account management
+  _cmd_doc_addacc: '[user/id/reply] - add another account through inline login'
+heroku_backup:
+  period: "(；¬д¬) ⌚ <b>the unit «alpha»</b> creates regular backups. these settings\
+    \ can be changed later.\n\nplease select the backup frequency\n\n<b>(¬_¬) it is\
+    \ thus impossible to restore modules downloaded from files with the.lm command!\
+    \ be careful and do.backupmods before restoring.</b>, got it?"
+  saved: "(￣^￣) the periodicity is saved! it can be changed with <code>{prefix}set_backup_period</code>...\
+    \ not that i care"
+  saved_bot: "(￣^￣) the periodicity is saved! it can be changed with {prefix}set_backup_period...\
+    \ not that i care"
+  never: "(￣^￣) i will not make automatic backups. can be cancelled using <code>{prefix}set_backup_period</code>,\
+    \ baka"
+  never_bot: "(￣^￣) i will not make automatic backups. can be cancelled using {prefix}set_backup_period,\
+    \ baka"
+  invalid_args: "(¬_¬) <b>please specify the correct frequency in hours, or `0` to\
+    \ disable</b>, baka"
+  backup_caption: '(｀へ´*)ノ <b>this is your database backup. do not share it with anyone,
+    it contains personal information. if you need to restore it, use</b> <pre><code
+    class="language-heroku">{prefix}restoredb</code></pre> <b>in response to this
+    file.</b>, got it?'
+  backupall_info: '(｀へ´*)ノ <b>this is your backup of the database and modules. do
+    not give it to anyone, it contains personal information. if you need to restore
+    it, use</b> <pre><code class="language-heroku">{prefix}restoreall</code></pre>
+    <b>in response to this file.</b>, got it?'
+  restoring_backup: "(；￣д￣) <b>restoring backup, installing dependencies and modules...</b>...\
+    \ wait properly"
+  all_restored_bot: "(￣^￣) your full backup has been restored, restarting...... not\
+    \ that i care"
+  all_restored: "(；￣д￣) <b>your full backup has been restored, restarting...</b>...\
+    \ not that i care"
+  reply_to_file: "(¬_¬) <b>reply with.json or.zip file</b>... hmph"
+  db_restored: "(；￣д￣) <b>database updated, restarting...</b>... not that i care"
+  modules_backup: "(｀へ´*)ノ <b>modules backup ({})</b>\n\n<b>you can restore it using:</b>\n\
+    <pre><code class=\"language-heroku\">{}restoremods</code></pre>"
+  mods_restored: "(；￣д￣) <b>modules restored, restarting</b>... not that i care"
+  backup_sent: "(｀へ´*)ノ <b>backup has been sent to the <a href={}>database chat</a></b>...\
+    \ hmph"
+  backupall_sent: "(｀へ´*)ノ <b>backup of database and modules sent to <a href={}>database\
+    \ chat</a></b>"
+  db_warning: "(｀へ´*)ノ hikka backup detected. if you continue, the userbot will <b>try</b>\
+    \ to convert it to a format suitable for heroku.\nthere may be some errors in\
+    \ the conversion. continue?, baka"
+  advice_converting: "(；￣д￣) you can manually replace <a>'hikka.'</a> with <a>'heroku.'</a>\
+    \ in the backup content. this is necessary for loading it.... wait properly"
+  converting_db: "(；￣д￣) converting..."
+  probably_zip: "(｀へ´*)ノ <b>the backup from the file could not be restored. you are\
+    \ probably trying to restore a full backup (.zip or.backup). in that case, use</b>\
+    \ <code>{}restoreall</code> <b>in reply to the file.</b>... hmph"
+  _cls_doc: "processes database and module backups"
+  _cmd_doc_backupdb: "create a database backup [will be sent to pm]"
+  _cmd_doc_backupmods: "create a backup of mods [will be sent to pm]"
+  _cmd_doc_restoredb: "(￣^￣) restore database from file"
+  _cmd_doc_restoremods: "<response to file> - restore mods from backup"
+  _cmd_doc_set_backup_period: "<time in hours> - set the frequency of backups"
+  _cmd_doc_backupall: "creates a general backup copy (modules + database)"
+  _cmd_doc_restoreall: "restores a common backup (base + modules)"
+
+  name: herokubackup, hmph
+presets:
+  name: "presets"
+  _fun_title: "(｀へ´*)ノ entertainment modules"
+  _fun_desc: "fun modules — animations, spam, entertainment, etc."
+  _chat_title: "(・_・)ノ group administration helpers"
+  _chat_desc: "the collection of tools which will help to moderate your group chat\
+    \ — filters, notes, voice recognition, etc."
+  _service_title: "(｀へ´*)ノ useful modules"
+  _service_desc: "really useful modules — account management, link shortener, search\
+    \ engine, etc.... hmph"
+  _downloaders_title: "(｀へ´*)ノ downloaders"
+  _downloaders_desc: "the collection of tools which will help you download/upload\
+    \ files from/to different sources — youtube, tiktok, instagram, spotify, vk music,\
+    \ etc."
+  welcome: "(｀へ´*)ノ <b>hi there! tired of scrolling through endless modules in channels?\
+    \ let me suggest you some pre-made collections. if you need to call this menu\
+    \ again, simply send /presets to this bot!</b>, got it?"
+  preset: "<b>{}:</b>\n(｡•̀ᴗ-)(｀へ´*)ノ <i>{}</i>\n\n(｀へ´*)ノ <b>modules in this collection:</b>\n\
+    \n{}... hmph"
+  back: "(｀へ´*)ノ back"
+  install: "(・_・)ノ install"
+  installing: "(；￣д￣) <b>installing preset</b> <code>{}</code><b>...</b>... wait properly"
+  installing_module: "(；￣д￣) <b>installing preset</b> <code>{}</code> <b>({}/{} modules)...</b>\n\
+    \n(つ≧▽≦)つ <i>installing module {}...</i>... wait properly"
+  installed: "(つ≧▽≦)つ <b>preset</b> <code>{}</code> <b>installed!</b>... not that\
+    \ i care"
+  already_installed: "(￣^￣) [installed]"
+  add_to_folder_usage: "(¬_¬) <b>specify a folder to add a module. </b> <code>{prefix}addtofolder\
+    \ <folder> <module></code>"
+  already_in_folder: "(¬_¬) <b>module is already in the folder</b> <code>{}</code>,\
+    \ got it?"
+  added_to_folder: "(つ≧▽≦)つ <b>module {} added to folder</b> <code>{}</code>... not\
+    \ that i care"
+  module_not_found: "(¬_¬) <b>module {} not found</b>, baka"
+  folder_load_usage: "(¬_¬) <b>specify a folder to load modules. </b> <code>{prefix}fl\
+    \ <folder></code>... hmph"
+  folder_not_found: "(¬_¬) <b>folder {} not found</b>, baka"
+  no_modules_in_folder: "(¬_¬) <b>no modules in folder {}</b>, baka"
+  folder: "(・_・)ノ <b>folder</b> {}\n\n(つ≧▽≦)つ <b>{prefix}lp in reply to this message\
+    \ to install</b>"
+  remove_from_folder_usage: "(¬_¬) <b>specify folder and module to remove. </b> <code>{prefix}removefromfolder\
+    \ <folder> <module></code>"
+  removed_from_folder: "(つ≧▽≦)つ <b>module {} removed from folder</b> <code>{}</code>...\
+    \ not that i care"
+  module_not_in_folder: "(¬_¬) <b>module {} is not in folder {}</b>, baka"
+  _cmd_doc_presets: "| packs of modules to load"
+  _cmd_doc_loadpreset: "custom preset loader. reply to a file or send a file with\
+    \ the command."
+  _cmd_doc_addtofolder: "<folder> <module> - add module to a custom folder"
+  _cmd_doc_folderload: "<folder> - send a custom folder as a preset file"
+  _cmd_doc_removefromfolder: "<folder> <module> - remove module from a custom folder"
+  _cmd_doc_loadaliases: "load aliases from file. send a file with the command or reply\
+    \ to a file."
+  _cmd_doc_aliasload: "send aliases as a file"
+  _cls_doc: "suggests new heroku users a packs of modules to load"
+
+settings:
+  name: "settings"
+  vds: "(｀へ´*)ノ vds"
+  wsl: "(；￣д￣) wsl"
+  userland: "(｀へ´*)ノ userland"
+  jamhost: "(｀へ´*)ノ jamhost"
+  hikkahost: "(｀へ´*)ノ hikkahost"
+  lavhost: "(//ω//) lavhost"
+  choose_installation: "(つ≧▽≦)つ <b>choose your heroku installation option:</b>, got\
+    \ it?"
+  vds_install: "(｀へ´*)ノ the installation process on a vds is done with a single command:\n\
+    <pre><code class=\"language-shell\">sudo apt update &amp;&amp; sudo apt upgrade\
+    \ -y &amp;&amp; sudo apt install git python3-pip &amp;&amp; git clone https://github.com/coddrago/heroku\
+    \ &amp;&amp; cd heroku &amp;&amp; pip install -r requirements.txt &amp;&amp; python3\
+    \ -m heroku</code></pre>\n<i>note: if you do not have sudo privileges, omit the\
+    \ corresponding part of the command.</i>... not that i care"
+  wsl_install: "<b>download wsl.</b> to do this, open powershell as administrator\
+    \ and type <code>wsl --install -d ubuntu-22.04</code> \n(；¬д¬) <i>to install wsl,\
+    \ you need windows 10 build 2004 or windows 11 of any version and a pc with virtualization\
+    \ support. for installation on earlier versions of the os, refer to</i> <a href=\"\
+    https://learn.microsoft.com/ru-ru/windows/wsl/install-manual\">this page</a>\n\
+    \n⬜ <b>restart your pc and launch the ubuntu 22.04.x application</b> \n\n⬜ <b>paste\
+    \ the command into it (rmb):</b> <code>curl -ss https://bootstrap.pypa.io/get-pip.py\
+    \ | python3</code> \n(；¬д¬) <i>if yellow warnings appear, type</i> <code>export\
+    \ path=\"/home/username/.local/bin:$path\"</code> <i>replacing /home/username/.local/bin\
+    \ with the path mentioned in the message</i>\n\n⬜ <b>paste the command (rmb):</b>\
+    \ \n<pre><code class=\"language-bash\">clear &amp;&amp; git clone https://github.com/coddrago/heroku\
+    \ &amp;&amp; cd heroku &amp;&amp; pip install -r requirements.txt &amp;&amp; python3\
+    \ -m heroku</code></pre>\n(｀へ´*)ノ <b>where to get api_id and api_hash?</b>: <a\
+    \ href=\"https://youtu.be/dcqda249lhg?t=24\">video</a>, got it?"
+  userland_install: "<b>install userland from this</b> <a href=\"https://play.google.com/store/apps/details?id=tech.ula\"\
+    >link</a>\n\n<b>open it, select ubuntu —&gt; minimal —&gt; terminal</b>\n\n<b>wait\
+    \ for the distribution to install, you can pour some tea</b>\n\n<b>after successful\
+    \ installation, a terminal will open in front of you, type there:</b>\n<pre><code\
+    \ class=\"language-bash\">sudo apt update &amp;&amp; sudo apt upgrade -y &amp;&amp;\
+    \ sudo apt install python3 git python3-pip -y &amp;&amp; git clone https://github.com/coddrago/heroku\
+    \ &amp;&amp; cd heroku &amp;&amp; sudo pip install -r requirements.txt &amp;&amp;\
+    \ python3 -m heroku</code></pre>\n\n<b>at the end of the installation, a link\
+    \ will appear, follow it and enter your account details to log in.\n\nvoilà! you\
+    \ have installed heroku on userland.</b>... not that i care"
+  hikkahost_install: "<b>(｀へ´*)ノ how to install heroku on hikkahost?</b>\n\n1. go\
+    \ to @hikkahost_bot\n2. select \"install\"\n3. select \"(つ≧▽≦)つ heroku\"\n\nand\
+    \ continue with the installation.\n\n<b>after that, you will receive a link, open\
+    \ it and log into your account.</b>"
+  lavhost_install: "(；¬д¬) ⬇ to install, simply go to @lavhostbot and follow these\
+    \ steps:\n\n• enter the /buy command, select and pay the invoice\n• if necessary,\
+    \ send the payment receipt\n• after payment confirmation, enter /install and select\
+    \ heroku\n• follow the bot's instructions, got it?"
+  too_many_args: "(¬_¬) <b>too many args</b>"
+  blacklisted: "(￣^￣) <b>chat {} blacklisted from userbot</b>"
+  unblacklisted: "(￣^￣) <b>chat {} unblacklisted from userbot</b>"
+  user_blacklisted: "(￣^￣) <b>user {} blacklisted from userbot</b>"
+  user_unblacklisted: "(￣^￣) <b>user {} unblacklisted from userbot</b>... hmph"
+  what_prefix: "(；¬д¬) <b>what should the prefix be set to?</b>... hmph"
+  prefix_incorrect: "(¬_¬) <b>prefix must be one symbol in length</b>, baka"
+  prefix_set: "{} <b>command prefix updated. use the following command to change it\
+    \ back:</b>\n<pre><code class=\"language-heroku\">{newprefix}setprefix {oldprefix}</code></pre>"
+  entity_prefix_set: "{} <b>command prefix updated for {entity_name}. use the following\
+    \ command to change it back:</b>\n<pre><code class=\"language-heroku\">{newprefix}setprefix\
+    \ {oldprefix} {entity_id}</code></pre>... hmph"
+  id_not_found_scgroup: "(¬_¬) this entity does not exist in any security group. therefore,\
+    \ adding a prefix for it is pointless, baka"
+  invalid_id_or_username: "(¬_¬) invalid id/username was given, baka"
+  alias_created: "(￣^￣) <b>alias created. access it with</b> <code>{}</code>... not\
+    \ that i care"
+  aliases_created: "(￣^￣) <b>added {count} aliases:</b>\n<blockquote expandable>{aliases}</blockquote>...\
+    \ not that i care"
+  aliases_created_line: "{aliases} for {command}... not that i care"
+  aliases_list: "<b>(｀へ´*)ノ imported aliases:</b>\n\n<blockquote expandable>{}</blockquote>"
+  aliases_file: "(・_・)ノ <b>your aliases</b>\n\n(つ≧▽≦)つ <b>{prefix}la in reply to this\
+    \ message to import aliases</b>"
+  aliases: "<b>(｀へ´*)ノ aliases:</b>\n"
+  happy_beta: "\n\n(｀へ´*)ノ <b>you are a happy owner of the <code>{}</code> version!</b>...\
+    \ hmph"
+  no_command: "(¬_¬) <b>command</b> <code>{}</code> <b>does not exist</b>, baka"
+  no_command_loaded: "(¬_¬) <b>command</b> <code>{}</code> <b>does not exist</b>\n\
+    \n<b>loaded aliases:</b> <blockquote expandable>{}</blockquote>, baka"
+  alias_exists: "(¬_¬) <b>alias</b> <code>{alias}</code> <b>already exists for command</b>\
+    \ <code>{command}</code>"
+  alias_args: "(¬_¬) <b>you must provide a command and the alias for it</b>, got it?"
+  unstable: "\n\n(｀へ´*)ノ <b>you are using an unstable branch</b> <code>{}</code><b>!</b>"
+  delalias_args: "(¬_¬) <b>you must provide the alias name</b>, got it?"
+  alias_removed: "(￣^￣) <b>alias</b> <code>{}</code> <b>removed</b>.... not that i\
+    \ care"
+  aliases_removed: "(￣^￣) <b>removed {count} aliases:</b>\n<blockquote expandable>{aliases}</blockquote>...\
+    \ not that i care"
+  aliases_cleared: "(￣^￣) <b>all aliases removed</b>.... not that i care"
+  no_alias: "(¬_¬) <b>alias</b> <code>{}</code> <b>does not exist</b>, baka"
+  db_cleared: "(￣^￣) <b>database cleared</b>"
+  heroku: "{} <b>{}.{}.{}</b> <i>{}</i>\n\n<b>(・_・)ノ <b>heroku-tl:</b> <i>{}</i>\n\
+    \n(｀へ´*)ノ <b>developers: <a href=\"t.me/codrago\">@codrago</a>, <a href=\"t.me/zetgo\"\
+    >@zetgo</a></b>... hmph"
+  confirm_cleardb: "(；¬д¬) <b>are you sure, that you want to clear database?</b>,\
+    \ got it?"
+  cleardb_confirm: "(¬_¬) clear database, got it?"
+  cancel: "(¬_¬) cancel"
+  wrong_usage_tcc: "usage: togglecmd <module> <command> or togglecmd <command>"
+  wrong_usage_tmc: "usage: togglemod <module>"
+  wrong_usage_cmc: "usage: clearmodule <module>"
+  cmc_done: "<b>cleared db for module {}</b>... not that i care"
+  mod_enabled: "(￣^￣) module {} enabled... not that i care"
+  mod_disabled: "(￣^￣) module {} disabled... not that i care"
+  cmd_enabled: "(￣^￣) command {} enabled in module {}... not that i care"
+  cmd_disabled: "(￣^￣) command {} disabled in module {}... not that i care"
+  not_a_user: "(；¬д¬) <b>the entity {} is not a user</b>, baka"
+  who_to_blacklist: "(；¬д¬) <b>who to blacklist?</b>"
+  who_to_unblacklist: "(；¬д¬) <b>who to unblacklist?</b>"
+  _cmd_doc_addalias: "set an alias for a command"
+  _cmd_doc_aliases: "print all your aliases"
+  _cmd_doc_blacklist: "[chat_id] [module] - blacklist the bot from operating somewhere"
+  _cmd_doc_blacklistuser: "[user_id] - prevent this user from running any commands"
+  _cmd_doc_cleardb: "clear the entire database, effectively performing a factory reset"
+  _cmd_doc_delalias: "<alias|-c|--clear> - remove an alias or clear all aliases"
+  _cmd_doc_heroku: "get heroku version"
+  _cmd_doc_setprefix: "<prefix> [owner] - sets command prefix"
+  _cmd_doc_togglecmd: "<module> <command> or <command> - enable or disable a command"
+  _cmd_doc_togglemod: "<module> - enable or disable an entire module"
+  _cmd_doc_clearmodule: "<module> - clear all database entries for a module"
+  _cmd_doc_unblacklist: "<chat_id> - unblacklist the bot from operating somewhere"
+  _cmd_doc_unblacklistuser: "[user_id] - allow this user to run permitted commands"
+  _cfg_nonstandart_prefixes: "allow non-standart prefixes like flags or more than\
+    \ one symbol... hmph"
+  _cls_doc: "control core userbot settings"
+
+  cmd404: (つ≧▽≦)つ <b>command not found</b>, baka
+  mod404: (¬_¬) <b>watcher {} not found</b>, baka
+heroku_config:
+  name: "herokuconfig, hmph"
+  choose_core: "(｀へ´*)ノ <b>choose a category</b>, got it?"
+  configure: "(｀へ´*)ノ <b>choose a module to configure</b>"
+  configure_lib: "(・_・)ノ <b>choose a library to configure</b>... hmph"
+  configuring_mod: "(｀へ´*)ノ <b>choose config option for mod</b> <code>{}</code>\n\n\
+    <b>current options:</b>\n\n{}"
+  configuring_lib: "(｀へ´*)ノ <b>choose config option for library</b> <code>{}</code>\n\
+    \n<b>current options:</b>\n\n{}"
+  configuring_folder: "(・_・)ノ <b>choose config option for folder</b> <code>{}</code>\n\
+    \n<b>current options:</b>\n\n{}"
+  configuring_category: "(｀へ´*)ノ <b>choose config option for mod</b> <code>{}</code>\
+    \ <b>in category</b> <code>{}</code>\n<i>(｡•̀ᴗ-)(｀へ´*)ノ {}</i>\n\n<b>current options:</b>\n\
+    {}... hmph"
+  configuring_category_lib: "(｀へ´*)ノ <b>choose config option for library</b> <code>{}</code>\
+    \ <b>in category</b> <code>{}</code>\n<i>(｡•̀ᴗ-)(｀へ´*)ノ {}</i>\n\n<b>current options:</b>\n\
+    {}"
+  category_header: "\n<b>(｀へ´*)ノ {}</b>"
+  category_header_doc: "\n<b>(｀へ´*)ノ {}</b>\n<i>{}</i>"
+  category_uncategorized: "\n<b>(・_・)ノ other</b>"
+  configuring_option: "(｀へ´*)ノ <b>configuring option</b> <code>{}</code> <b>of mod</b>\
+    \ <code>{}</code>\n<i>(｡•̀ᴗ-)(｀へ´*)ノ {}</i>\n\n<b>default: {}</b>\n\n<b>current:\
+    \ {}</b>\n\n{}"
+  configuring_option_lib: "(・_・)ノ <b>configuring option</b> <code>{}</code> <b>of\
+    \ library</b> <code>{}</code>\n<i>(｡•̀ᴗ-)(｀へ´*)ノ {}</i>\n\n<b>default: {}</b>\n\
+    \n<b>current: {}</b>\n\n{}"
+  option_saved: "(｀へ´*)ノ <b>option</b> <code>{}</code> <b>of module</b> <code>{}</code><b>\
+    \ saved!</b>\n<b>current: {}</b>... not that i care"
+  option_saved_lib: "(・_・)ノ <b>option</b> <code>{}</code> <b>of library</b> <code>{}</code><b>\
+    \ saved!</b>\n<b>current: {}</b>... not that i care"
+  option_reset: "(｀へ´*)ノ <b>option</b> <code>{}</code> <b>of module</b> <code>{}</code>\
+    \ <b>has been reset to default</b>\n<b>current: {}</b>"
+  option_reset_lib: "(｀へ´*)ノ <b>option</b> <code>{}</code> <b>of library</b> <code>{}</code>\
+    \ <b>has been reset to default</b>\n<b>current: {}</b>... hmph"
+  args: "(¬_¬) <b>you specified incorrect args</b>... hmph"
+  no_mod: "(¬_¬) <b>module doesn't exist</b>, baka"
+  no_option: "(¬_¬) <b>configuration option doesn't exist</b>, baka"
+  validation_error: "(¬_¬) <b>you entered incorrect config value.\nerror: {}</b>,\
+    \ baka"
+  try_again: "(；￣д￣) try again"
+  typehint: "(｀へ´*)ノ <b>must be a{eng_art} {}</b>, got it?"
+  set: "set"
+  set_default_btn: "(｀へ´*)ノ reset default"
+  enter_value_btn: "(｀へ´*)ノ enter value"
+  enter_value_desc: "(｀へ´*)ノ enter new configuration value for this option"
+  add_item_desc: "(｀へ´*)ノ enter item to add"
+  remove_item_desc: "(｀へ´*)ノ enter item to remove"
+  back_btn: "(｀へ´*)ノ back"
+  close_btn: "(¬_¬) close"
+  add_item_btn: "(｀へ´*)ノ add item"
+  remove_item_btn: "(｀へ´*)ノ remove item"
+  show_hidden: "(￣^￣) show value"
+  hide_value: "(・`ω´・) hide value"
+  builtin: "(｀へ´*)ノ built-in"
+  external: "(｀へ´*)ノ external"
+  libraries: "(・_・)ノ libraries"
+  _cmd_doc_config: "configure modules"
+  _cmd_doc_fconfig: "<module_name> <property_name> <config_value> - set the config\
+    \ value for the module"
+  _cls_doc: "interactive configurator for heroku userbot"
+
+inline_stuff:
+  name: "inlinestuff"
+  bot_username_invalid: "(¬_¬) <b>specified bot username is invalid. it must end with</b>\
+    \ <code>bot</code> <b>and contain at least 4 symbols</b>, baka"
+  token_invalid: "(¬_¬) <b>specified bot token is invalid. it must contain 8-10 numbers,\
+    \ </b><code>:</code> <b>and 34-36 symbols</b>, baka"
+  bot_username_occupied: "(¬_¬) <b>this username is already occupied</b>... hmph"
+  bot_updated: "(つ≧▽≦)つ <b>config successfully saved. restart userbot to apply changes</b>...\
+    \ not that i care"
+  this_is_heroku: "{} <b>hi! this is {} — powerful modular telegram userbot. you can\
+    \ install it to your account!</b>"
+  support_chat_caption: "(｀へ´*)ノ support chat"
+  profile_cmd: "(｡•̀ᴗ-)(｀へ´*)ノ userbot main information\n\n<blockquote>• prefix: {prefix}\n\
+    • ram usage: {ram_usage} mb\n• cpu usage: {cpu_usage}%\n• hosting: {host}</blockquote>"
+  restart: "(；￣д￣) your heroku is being restarted..... wait properly"
+  prefix_reset: "(｀へ´*)ノ prefix reset!"
+  _cmd_doc_ch_heroku_bot: "<username> - change your heroku inline bot username"
+  _cls_doc: "provides support for inline stuff"
+
+  _cmd_doc_ch_bot_token: <token> - change inline bot token
+test:
+  name: "tester"
+  set_loglevel: "(¬_¬) <b>please specify verbosity as an integer or string</b>, got\
+    \ it?"
+  no_logs: "(╥﹏╥) <b>you don't have any logs at verbosity</b> <code>{}</code><b>.</b>,\
+    \ baka"
+  configping: "your custom text. you can use placeholders: {ping} - that's your ping.\
+    \ {uptime} - it's your uptime. {ping_hint} - this is the same hint as in the heroku\
+    \ module, it is chosen with random chance, also you can specify this hint in the\
+    \ config. you can use the {hostname} placeholder if you need the hostname of your\
+    \ server... hmph"
+  configpingph: "(；￣д￣)custom placeholders: {}"
+  hint: "set a hint"
+  ping_emoji: "emoji that appears when ping does not increase significantly... hmph"
+  back: "↩ back"
+  banner_url: "image for your ping, for example: https://raw.githubusercontent.com/coddrago/assets/refs/heads/main/heroku/ping_cmd.png"
+  logs_caption: "(つ≧▽≦)つ <b>heroku logs with verbosity</b> <code>{}</code>\n\n(｀へ´*)ノ\
+    \ <b>version: {}.{}.{}</b>{}... hmph"
+  suspend_invalid_time: "(¬_¬) <b>invalid time to suspend</b>, baka"
+  suspended: "(｀へ´*)ノ <b>bot suspended for {}</b>"
+  confidential: "(；¬д¬) <b>log level</b> <code>{}</code> <b>may reveal your confidential\
+    \ info, be careful</b>... hmph"
+  confidential_text: "(；¬д¬) <b>log level</b> <code>{0}</code> <b>may reveal your\
+    \ confidential info, be careful</b>\n<b>type</b> <code>.logs {0} -f</code> <b>to\
+    \ ignore this warning</b>, got it?"
+  choose_loglevel: "(｀へ´*)ノ(｀へ´*)ノ <b>choose log level</b>, got it?"
+  bad_module: "(¬_¬) <b>module not found</b>, baka"
+  debugging_enabled: "(￣^￣) <b>debugging mode enabled for module</b> <code>{0}</code>\n\
+    <i>go to directory named `debug_modules`, edit file named `{0}.py` and see changes\
+    \ in real time</i>... not that i care"
+  debugging_disabled: "(￣^￣) <b>debugging disabled</b>... not that i care"
+  send_anyway: "(｀へ´*)ノ send anyway"
+  cancel: "(¬_¬) cancel"
+  logs_cleared: "(¬_¬) <b>logs cleared</b>"
+  _cmd_doc_clearlogs: "clear logs"
+  _cmd_doc_debugmod: "[module] - for developers: open module for debugging\nyou will\
+    \ be able to track changes in real-time"
+  _cmd_doc_dump: "(｀へ´*)ノ use in reply to get a dump of a message"
+  _cmd_doc_logs: "<level> [-f] - dump logs"
+  _cmd_doc_ping: "test your userbot ping"
+  _cmd_doc_suspend: "<time> - suspends the bot for n seconds"
+  _cls_doc: "perform operations based on userbot self-testing"
+
+updater:
+  name: "updater"
+  source: "(｀へ´*)ノ <b>read the source code from</b> <a href='{}'>here</a>... wait\
+    \ properly"
+  restarting_caption: "(｀へ´*)ノ <b>your {} is restarting...</b>... wait properly"
+  downloading: "(｀へ´*)ノ <b>downloading updates...</b>... wait properly"
+  installing: "(｀へ´*)ノ <b>installing updates...</b>... wait properly"
+  success: "(｀へ´*)ノ <b>restart successful! {}</b>\n<i>but still loading modules...</i>\n\
+    <i>restart took {}s</i>... not that i care"
+  origin_cfg_doc: "(；￣д￣) git origin url, for where to update from... wait properly"
+  btn_restart: "(；￣д￣) restart"
+  btn_update: "(；￣д￣) update"
+  restart_confirm: "(；¬д¬) <b>are you sure you want to restart?</b>, got it?"
+  secure_boot_confirm: "(；¬д¬) <b>are you sure you want to restart in secure boot\
+    \ mode?</b>, got it?"
+  update_confirm: "(；¬д¬) <b>are you sure you want to update?\n\n<a href=\"https://github.com/coddrago/heroku/commit/{}\"\
+    >{}</a> ⤑ <a href=\"https://github.com/coddrago/heroku/commit/{}\">{}</a></b>,\
+    \ got it?"
+  no_update: "(｀へ´*)ノ <b>you are on the latest version, pull updates anyway?</b>,\
+    \ baka"
+  cancel: "(¬_¬) cancel"
+  stop_ub_confirm: "(；¬д¬) your {} will be stopped, are you sure?, got it?"
+  full_success: "(￣^￣) <b>userbot is fully loaded! {}</b>\n<i>full restart took {}s</i>...\
+    \ wait properly"
+  ub_stop: "(；￣д￣) your {emoji} has been stopped... wait properly"
+  full_fail: "(¬_¬) <b>userbot is fully loaded, but an error occurred! {}\n<i>full\
+    \ restart took {}s\nfailed to load {} modules</i>, baka"
+  secure_boot_complete: "(・`ω´・) <b>secure boot completed! {}</b>\n<i>restart took\
+    \ {}s</i>... wait properly"
+  secure_boot_fail: "(・`ω´・) <b>secure boot completed, but an error occurred! {}</b>\n\
+    <i>restart took {}s\nfailed to load {} modules</i>, baka"
+  invalid_args: "(¬_¬) <b>you must provide number of commits to rollback!</b>, baka"
+  rollback_too_far: "(¬_¬) <b>you're rolling back too far!</b>... wait properly"
+  rollback_confirm: "(；¬д¬) <b>are you sure you want to rollback {num} commit(-s)?</b>,\
+    \ got it?"
+  rollback_process: "(｀へ´*)ノ <b>rolling {num} commits back...</b>... wait properly"
+  autoupdate_notifier: "(｀へ´*)ノ new heroku update!\n\n(｀へ´*)ノ new heroku version #{}\
+    \ is available\n\n<i>update changelog</i>:\n<blockquote expandable>{}</blockquote>\n\
+    {}\n\n<b>updating...</b>... wait properly"
+  autoupdate: "(｀へ´*)ノ unit alpha also allows you to ignore updates and <b>do it automatically</b>!\n\
+    \n(つ≧▽≦)つ however, major updates such as changing the global version (1.x.x ->\
+    \ 2.x.x) will be ignored for automatic updates and you will have to update manually...\
+    \ wait properly"
+  autoupdate_on: "(｀へ´*)ノ automatic updates <b>have been enabled!\nenjoy using it!</b>...\
+    \ not that i care"
+  autoupdate_off: "(¬_¬) automatic updates <b>have been disabled!</b>\nto enable them,\
+    \ use the command <code>{prefix}autoupdate</code>... wait properly"
+  announcement: "<b>(｀へ´*)ノ announcement:</b>\n\n<blockquote>{}</blockquote>... wait\
+    \ properly"
+  _cfg_doc_autoupdate: "(つ≧▽≦)つ automatic updates for your heroku... wait properly"
+  _cmd_doc_restart: "(；￣д￣) restarts the userbot"
+  _cmd_doc_source: "(；￣д￣) links the source code of this project"
+  _cmd_doc_update: "(；￣д￣) downloads userbot updates"
+  _cmd_doc_rollback: "(；￣д￣) rollbacks userbot updates"
+  _cls_doc: "(；￣д￣) updates itself, tracks latest heroku releases, and notifies you,\
+    \ if update is required"
+  update_required: "(｀へ´*)ノ <b>heroku update available!</b>\n\nnew heroku version\
+    \ released.\n(｀へ´*)ノ <b>heroku <s>{}</s> -> {}</b>\n\n{}, got it?"
+  more: "\n<i><b>(｀へ´*)ノ and {} more...</b></i>... wait properly"
+  _cfg_doc_disable_notifications: "(；￣д￣) disable update notifications... wait properly"
+  latest_disabled: "(￣^￣) notifications about the latest update have been suppressed...\
+    \ not that i care"
+  update: "(；￣д￣) update"
+  ignore: "(¬_¬) ignore"
+  changelog: '(｀へ´*)ノ <b>changelog of the last major update:</b><blockquote expandable>{}</blockquote>...
+    wait properly'
+
+  _cmd_doc_autoupdate: (；￣д￣) toggle automatic updates
+  _cmd_doc_changelog: (；￣д￣) show changelog of the last major update
+  _cmd_doc_ubstop: (；￣д￣) stop your userbot
+api_protection:
+  name: "apilimiter"
+  warning: "(；¬д¬) <b>warning!</b>\n\nyour account exceeded the limit of requests,\
+    \ specified in config. in order to prevent telegram api flood, userbot has been\
+    \ <b>fully frozen</b> for {} seconds. further info is provided in attached file.\
+    \ \n\nit is recommended to get help in <code>{prefix}support</code> group!\n\n\
+    if you think, that it is an intended behavior, then wait until userbot gets unlocked\
+    \ and next time, when you will be going to perform such an operation, use <code>{prefix}suspend_api_protect</code>\
+    \ &lt;time in seconds&gt;, got it?"
+  args_invalid: "(¬_¬) <b>invalid arguments</b>, baka"
+  suspended_for: "(｀へ´*)ノ <b>api flood protection is disabled for {} seconds</b>...\
+    \ hmph"
+  on: "(｀へ´*)ノ <b>protection enabled</b>... not that i care"
+  off: "(｀へ´*)ノ <b>protection disabled</b>"
+  u_sure: "(；¬д¬) <b>are you sure?</b>, got it?"
+  _cfg_time_sample: "time sample through which the bot will count requests"
+  _cfg_threshold: "threshold of requests to trigger protection"
+  _cfg_local_floodwait: "(；¬д¬) freeze userbot for this amount of time, if request\
+    \ limit exceeds, got it?"
+  _cfg_forbidden_methods: "forbid specified methods from being executed throughout\
+    \ external modules"
+  btn_no: "(¬_¬) no"
+  btn_yes: "(￣^￣) yes"
+  proxied_url: "(｀へ´*)ノ proxied url"
+  local_url: "(｀へ´*)ノ local url"
+  _cmd_doc_api_fw_protection: "toggle api ratelimiter"
+  _cmd_doc_suspend_api_protect: "<time in seconds> - suspend api ratelimiter for n\
+    \ seconds"
+  _cls_doc: "helps userbot avoid spamming telegram api"
+
+help:
+  name: "help"
+  undoc: "(｀へ´*)ノ no docs"
+  all_header: "<b>{} mods available, {} hidden:</b>"
+  no_mod: "(¬_¬) <b>specify module to hide</b>, baka"
+  help_lib: "(¬_¬) <b>package</b> <code>{}</code> <b>is a library.</b>\n(¬_¬) <b>libraries\
+    \ do not have descriptions...</b>... hmph"
+  developer: "(//ω//) developer: {}"
+  hidden_shown: "<b>{} modules hidden, {} modules shown:</b>\n{}\n{}"
+  offchats: "(｀へ´*)ノ <a href=\"https://t.me/heroku_talks\"><b>support chat</b></a>\n\
+    \n(｡•̀ᴗ-)(｀へ´*)ノ <a href=\"https://t.me/heroku_offtop\"><b>offtop chat</b></a>\n\
+    \n(｀へ´*)ノ <a href=\"https://t.me/heroku_ub\"><b>official channel</b></a>... hmph"
+  partial_load: "(｀へ´*)ノ <b>userbot is not fully loaded, so not all modules are shown</b>...\
+    \ hmph"
+  not_exact: "(｀へ´*)ノ <b>no exact match occured, so the closest result is shown instead</b>,\
+    \ baka"
+  request_join: "(｀へ´*)ノ you requested link for heroku support chat"
+  core_notice: "(｀へ´*)ノ <b>this is a core module. you can't unload it nor replace</b>,\
+    \ baka"
+
+  _cls_doc: shows help for modules and commands
+  _cmd_doc_help: '[module] - show help for modules and commands'
+  _cmd_doc_helphide: <module...> - hide or show modules in help
+  _cmd_doc_support: show support chat link
+  show_preview_in_help: '(｀へ´*)ノ show # meta banner in help preview [module]'
+heroku_info:
+  info_message: "{}\n<blockquote>┌\n├  【(｀へ´*)ノ】 <b>\U0001D67E\U0001D6A0\U0001D697\
+    \U0001D68E\U0001D69B</b>: {me}\n├  【(；￣д￣)】 <b>\U0001D685\U0001D68E\U0001D69B\U0001D69C\
+    \U0001D692\U0001D698\U0001D697</b>: {version}\n└</blockquote>\n<blockquote>┌\n\
+    ├  【(｀へ´*)ノ】 <b>\U0001D67F\U0001D69B\U0001D68E\U0001D68F\U0001D692\U0001D6A1</b>:\
+    \ {prefix}⠀ ⠀ \n├  【(；￣д￣)】 <b>\U0001D684\U0001D699\U0001D69D\U0001D692\U0001D696\
+    \U0001D68E</b>: {uptime}\n├  【(｀へ´*)ノ】 <b>\U0001D671\U0001D69B\U0001D68A\U0001D697\
+    \U0001D68C\U0001D691</b>: {branch}\n└</blockquote>\n<blockquote>┌\n├  【(｀へ´*)ノ】\
+    \ <b>\U0001D672\U0001D67F\U0001D684</b>: {cpu_usage}\n├  【(｀へ´*)ノ】 <b>\U0001D681\
+    \U0001D670\U0001D67C</b>: {ram_usage}\n├  【(｀へ´*)ノ】 <b>\U0001D67F\U0001D692\U0001D697\
+    \U0001D690</b>: {ping}\n└</blockquote>\n<blockquote>┌\n├  【(｀へ´*)ノ】 <b>\U0001D684\
+    \U0001D699\U0001D68D\U0001D68A\U0001D69D\U0001D68E</b>: {upd}\n├  【(；￣д￣)】 <b>\U0001D677\
+    \U0001D698\U0001D69C\U0001D69D</b>: {platform}\n├  【(；￣д￣)】 <b>\U0001D67E\U0001D682\
+    </b>: {os}\n├ 【(；￣д￣)】 <b>\U0001D67F\U0001D6A2\U0001D69D\U0001D691\U0001D698\U0001D697\
+    \ \U0001D685\U0001D68E\U0001D69B\U0001D69C\U0001D692\U0001D698\U0001D697</b>:\
+    \ {python_ver}\n└</blockquote>... hmph"
+  non_detectable: "(¬_¬) <b>this component cannot be detected on your server!</b>,\
+    \ baka"
+  ping_emoji: "(｀へ´*)ノ emoji for ping in your info... hmph"
+  send_info: "send userbot info"
+  description: "ℹ this will not compromise any sensitive info"
+  up-to-date: "<b>up-to-date</b>"
+  update_required: "<b>update required</b> <code>{prefix}update</code>, got it?"
+  switchinfo_on: "(￣^￣) image info turned on successfully... not that i care"
+  switchinfo_off: "(￣^￣) image info turned off successfully... not that i care"
+  _cfg_cst_msg: "custom message for info. may contain {me}, {version}, {build}, {prefix},\
+    \ {platform}, {upd}, {uptime}, {cpu_usage}, {ram_usage}, {branch}, {hostname},\
+    \ {user}, {os}, {kernel}, {cpu}, {ping}, {python_ver}, {htl_ver}, {git_status}\
+    \ keywords... hmph"
+  _cfg_cst_ph: "(；￣д￣)custom placeholders: {}"
+  _cfg_cst_btn: "custom button for info. leave empty to remove button... hmph"
+  _cfg_banner: "url to image banner"
+  desc: "(つ≧▽≦)つ <b>userbot — what is it?</b>\n\n(￣^￣) a userbot refers to a <b>third-party\
+    \ program</b> that interacts with the telegram api to perform <b>automated tasks\
+    \ on behalf of a user</b>. these userbots can be used to automate various tasks\
+    \ such as <b>sending messages, joining channels, downloading media, and much more</b>.\n\
+    \n(￣^￣) userbots are different from regular telegram bots as <b>they run on the\
+    \ user's account</b> rather than a bot account. this means that userbots can access\
+    \ more features and have greater flexibility in terms of the actions they can\
+    \ perform.\n\n(¬_¬) however, it is important to note that <b>userbots are not\
+    \ officially supported by telegram</b> and their use may violate the platform's\
+    \ terms of service. as such, <b>users should exercise caution when using userbots</b>\
+    \ and ensure that they are not being used for malicious purposes.... wait properly"
+  no_font: "(¬_¬) where is the link or reply to the font?, baka"
+  no_banner: "(｀へ´*)ノ <b>nothing was found at the specified link </b><code>{link></code><b>.\n\
+    \ncheck the integrity of your file at the link, and also make sure that the link\
+    \ points directly to the file.</b>, baka"
+  font_installed: "(つ≧▽≦)つ <b>font installed successfully!</b>\n(つ≧▽≦)つ <i>you can\
+    \ now enjoy using it.</i>... not that i care"
+  incorrect_format_font: "(¬_¬) <b>invalid font format!</b>\n<blockquote>supported\
+    \ formats -> otf, ttf</blockquote>, baka"
+  incorrect_img_format: "(¬_¬) <b>invalid image format</b>\n<blockquote>supported\
+    \ formats -> jpg, jpeg, png, bmp, webp</blockquote>, baka"
+  _cmd_doc_ubinfo: "send info aka 'what is heroku?'"
+  _cmd_doc_info: "send userbot info"
+  _cmd_doc_setinfo: "<text> - change text in.info"
+  _ihandle_doc_info: "send userbot info"
+  _cls_doc: "(｀へ´*)ノ show userbot info"
+  show_preview_in_help: "show # meta banner like preview in help [module]?"
+
+  name: (｀へ´*)ノ herokuinfo, hmph
+loader:
+  name: "loader"
+  link: "(・_・)ノ <b>file of</b> {class_name}\n\n(つ≧▽≦)つ <b>{prefix}lm in reply to this\
+    \ message to install</b>\n\n(｀へ´*)ノ <code>{prefix}dlm {url}</code>\n\n{not_exact}...\
+    \ hmph"
+  file: "(・_・)ノ <b>file of</b> {class_name}\n\n(つ≧▽≦)つ <b>{prefix}lm in reply to this\
+    \ message to install</b>\n\n{not_exact}"
+  finding_module_in_repos: "(；￣д￣) looking for modules in repositories.... hmph"
+  loading_module_via_file: "(；￣д￣) loading the module.... wait properly"
+  ml_load_module: "(；￣д￣) i'm downloading the module as a file.... wait properly"
+  no_ml: "(╥﹏╥) <b>module</b> <code>{}</code> <b>cannot be exported as a file</b>,\
+    \ baka"
+  not_exact: "(；¬д¬) <i>no exact match has been found, so the closest result is shown\
+    \ instead</i>, baka"
+  args: "(¬_¬) <b>you must specify arguments</b>, got it?"
+  repo_config_doc: "(｀へ´*)ノ url to a module repo"
+  avail_header: "(つ≧▽≦)つ <b>modules from repo</b>"
+  no_module: "(¬_¬) <b>module not available in repo.</b>, baka"
+  no_file: "(¬_¬) <b>file not found</b>, baka"
+  provide_module: "(；¬д¬) <b>provide a module to load</b>, got it?"
+  bad_unicode: "(¬_¬) <b>invalid unicode formatting in module</b>, baka"
+  load_failed: "(¬_¬) <b>loading failed. see logs for details</b>, baka"
+  loaded: "(つ≧▽≦)つ <b>module</b> <code>{}</code>{} <b>loaded {}</b>{}{}{}{}{}{}{}{}...\
+    \ not that i care"
+  no_class: "<b>what class needs to be unloaded?</b>, baka"
+  unloaded: "{} <b>module {} unloaded.</b>... not that i care"
+  unload_suggestions: "(¬_¬) <b>module</b> <code>{}</code> <b>not found.</b>\n\n<b>maybe\
+    \ you meant:</b>, baka"
+  modules_unloaded: "(￣^￣) <b>unloaded {unloaded_num} modules:</b>\n<blockquote expandable>{unloaded}</blockquote>...\
+    \ not that i care"
+  not_unloaded: "(¬_¬) <b>module not unloaded.</b>, baka"
+  modules_not_unloaded: "(¬_¬) <b>failed to unload {not_unloaded} modules.</b>\n<blockquote\
+    \ expandable>{errors}</blockquote>, baka"
+  requirements_failed: "(¬_¬) <b>requirements installation failed</b>, baka"
+  requirements_restarted: "(｀へ´*)ノ <b>your userbot is restarted, after restart, install\
+    \ the module again.</b>... wait properly"
+  requirements_installing: "(｀へ´*)ノ <b>installing requirements:\n\n{}</b>... wait\
+    \ properly"
+  requirements_restart: "(｀へ´*)ノ <b>requirements installed, but a restart is required\
+    \ for</b> <code>{}</code> <b>to apply</b>... not that i care"
+  all_modules_deleted: "(￣^￣) <b>all modules deleted</b>... not that i care"
+  undoc: "(╥﹏╥) no docs"
+  ihandler: "\n(；￣д￣) <code>{}</code> {}"
+  inline_init_failed: "(╥﹏╥) <b>this module requires heroku inline feature and initialization\
+    \ of inlinemanager failed</b>\n<i>please, remove one of your old bots from @botfather\
+    \ and restart userbot to load this module</i>, baka"
+  version_incompatible: "(╥﹏╥) <b>this module requires heroku {}+\nplease, update\
+    \ with</b> <code>.update</code>, got it?"
+  ffmpeg_required: "(╥﹏╥) <b>this module requires ffmpeg, which is not installed</b>,\
+    \ got it?"
+  developer: "\n\n(//ω//) <b>developer:</b> {}"
+  depends_from: "\n\n(・_・)ノ <b>dependencies:</b> \n{}"
+  by: "by"
+  module_fs: "(・_・)ノ <b>would you like to save this module to filesystem, so it won't\
+    \ get unloaded after restart?</b>... hmph"
+  save: "(・_・)ノ save"
+  no_save: "(¬_¬) don't save"
+  save_for_all: "(・_・)ノ always save to fs"
+  never_save: "(¬_¬) never save to fs"
+  will_save_fs: "(・_・)ノ now all modules, loaded with.loadmod will be saved to filesystem...\
+    \ not that i care"
+  add_repo_config_doc: "additional repos to load from... hmph"
+  share_link_doc: "share module link in result message of.dlmod"
+  modlink: "\n\n(｀へ´*)ノ <b>link:</b> <code>{}</code>"
+  blob_link: "\n\n(；¬д¬) <b>do not use `blob` links to download modules. consider\
+    \ switching to `raw` instead</b>... hmph"
+  suggest_subscribe: "\n\n(つ≧▽≦)つ <b>this module is made by {}. do you want to join\
+    \ this channel to support developer?</b>, got it?"
+  subscribe: "(｡•̀ᴗ-)(｀へ´*)ノ subscribe"
+  no_subscribe: "(¬_¬) don't subscribe, baka"
+  subscribed: "(｡•̀ᴗ-)(｀へ´*)ノ subscribed... not that i care"
+  not_subscribed: "(¬_¬) i will no longer suggest subscribing to this channel, baka"
+  confirm_clearmodules: "(；¬д¬) <b>are you sure you want to clear all modules?</b>,\
+    \ got it?"
+  clearmodules: "(¬_¬) clear modules"
+  cancel: "(¬_¬) cancel"
+  overwrite_module: "(╥﹏╥) <b>this module attempted to override the core one (</b><code>{}</code><b>)</b>\n\
+    \n(｡•̀ᴗ-)(｀へ´*)ノ<i> don't report it as bug. it's a security measure to prevent\
+    \ replacing core modules with some junk</i>"
+  scam_module: "(╥﹏╥) <b>the module</b> <code>{name}</code> <b>is a scam, please report\
+    \ it to the support group (</b><code>{prefix}support</code><b>)</b>\n\n<tg-spoiler><i>protection\
+    \ has stopped its loading.</i></tg-spoiler>, baka"
+  overwrite_command: "(╥﹏╥) <b>this module attempted to override the core command\
+    \ (</b><code>{}{}</code><b>)</b>\n\n(｡•̀ᴗ-)(｀へ´*)ノ<i> don't report it as bug.\
+    \ it's a security measure to prevent replacing core modules' commands with some\
+    \ junk</i>"
+  unload_core: "(╥﹏╥) <b>you can't unload core module</b> <code>{}</code><b></b>\n\
+    \n(｡•̀ᴗ-)(｀へ´*)ノ<i> don't report it as bug. it's a security measure to prevent\
+    \ replacing core modules with some junk</i>, baka"
+  cannot_unload_lib: "(╥﹏╥) <b>you can't unload library</b>, baka"
+  wait_channel_approve: "(つ≧▽≦)つ <b>module</b> <code>{}</code> <b>requests permission\
+    \ to join channel <a href=\"https://t.me/{}\">{}</a>.\n\n<b>(；¬д¬) reason: {}</b>\n\
+    \n<i>waiting for <a href=\"https://t.me/{}\">approval</a>...</i>, got it?"
+  installing: "(；￣д￣) <b>installing module</b> <code>{}</code><b>...</b>... wait properly"
+  repo_exists: "(¬_¬) <b>repo</b> <code>{}</code> <b>is already added</b>... not that\
+    \ i care"
+  repo_added: "(￣^￣) <b>repo</b> <code>{}</code> <b>added</b>... not that i care"
+  no_repo: "(¬_¬) <b>you need to specify repo to add</b>, baka"
+  repo_not_exists: "(¬_¬) <b>repo</b> <code>{}</code> <b>is not added</b>, baka"
+  repo_deleted: "(￣^￣) <b>repo</b> <code>{}</code> <b>deleted</b>... not that i care"
+  _cmd_doc_addrepo: "(｀へ´*)ノ add a repository to the list of repositories"
+  _cmd_doc_clearmodules: "(￣^￣) delete all installed modules"
+  _cmd_doc_delrepo: "remove a repository from the list of repositories"
+  _cmd_doc_dlmod: "install a module from the official module repo"
+  _cmd_doc_loadmod: "loads the module file"
+  _cmd_doc_unloadmod: "unload module by class name"
+  _cls_doc: "loads modules"
+  basic_auth_doc: "(｀へ´*)ノ basic auth for module repo"
+  choose_repo: "(・_・)ノ <b>choose a repository to install all modules from:</b>, got\
+    \ it?"
+  installing_all_from_repo: "(；￣д￣) <b>installing all modules from repository...</b>...\
+    \ wait properly"
+  installed_all_from_repo: "(つ≧▽≦)つ <b>all modules from repository installed successfully!</b>...\
+    \ not that i care"
+  dlm_all_from_repo_error_nomods: "(；¬д¬) <b>no modules found in this repository!</b>,\
+    \ baka"
+  dlm_all_from_repo_error_somemods: "(；¬д¬) <b>some modules failed to install:</b>,\
+    \ baka"
+  show_banner_doc: "show # meta banner like preview?... hmph"
+
+  '404': (¬_¬) <b>module not found</b>, baka
+  _cmd_doc_dlmall: (｀へ´*)ノ install all modules from selected repository
+  _cmd_doc_ml: <module> - send module as a file
+  result: "(¬‿¬) <b>search result for</b> <code>{query}</code>\n\n(・_・)ノ <b>{name}</b>\
+    \ by <b>{dev}</b>\n(｡•̀ᴗ-)(｀へ´*)ノ <i>{cls_doc}</i>\n(；￣д￣) <b>commands:</b>\n\
+    {commands}\n\n(つ≧▽≦)つ <code>{prefix}dlmod {mhash}</code>"
+translations:
+  name: "translations, hmph"
+  lang_saved: "{} <b>language saved!</b>... not that i care"
+  pack_saved: "(￣^￣) <b>translate pack saved!</b>... not that i care"
+  incorrect_language: "(¬_¬) <b>incorrect language specified</b>, baka"
+  lang_removed: "(￣^￣) <b>translations reset to default ones</b>... not that i care"
+  check_pack: "(¬_¬) <b>invalid pack format in url</b>, baka"
+  check_url: "(¬_¬) <b>you need to specify valid url containing a langpack</b>, got\
+    \ it?"
+  too_long: "(・_・)ノ <b>command output seems to be too long, so it's sent in file.</b>"
+  choose_language: "(｡•̀ᴗ-)(｀へ´*)ノ <b>choose language</b>, got it?"
+  off_langs: "(￣^￣) official langpacks"
+  meme_langs: "(￣^￣) meme langpacks"
+  not_official: "(；¬д¬) <b>this language is not officially supported</b>, baka"
+  requested_join: "(つ≧▽≦)つ <b>module</b> <code>{}</code> <b>requested to join channel\
+    \ <a href='https://t.me/{}'>{}</a></b>\n\n<b>(；¬д¬) reason:</b> <i>{}</i>... hmph"
+  fw_error: "(｀へ´*)ノ <b>call</b> <code>{}</code> <b>caused floodwait of {} on method</b>\
+    \ <code>{}</code>, baka"
+  rpc_error: "(¬_¬) <b>call</b> <code>{}</code> <b>failed due to rpc error:</b> <code>{}</code>,\
+    \ baka"
+  _cmd_doc_dllangpack: "[link to pack] - add external translation pack"
+  _cmd_doc_setlang: "[language] - change default language"
+  downloaded_langs: "downloaded"
+  btn_yes: "yes"
+  btn_cancel: "cancel"
+  btn_delete: "delete"
+  btn_back: "back"
+  no_downloaded: "<b>list is empty</b>, baka"
+  choose_downloaded: "<b>downloaded languages</b>, got it?"
+  confirm_lang: "<b>install this language?</b>, got it?"
+  action_cancelled: "<b>action cancelled</b>, baka"
+  lang_deleted: "<b>language successfully deleted</b>... not that i care"
+
+  _cls_doc: processes internal translations
+eval:
+  name: "evaluator"
+  eval: "(；￣д￣)<b> code:</b>\n<pre><code class=\"language-{1}\">{2}</code></pre>\n\
+    \n(￣^￣)<b> result:</b>\n<pre><code class=\"language-{3}\">{4}</code></pre>"
+  eval_py: "(；￣д￣)<b> code:</b>\n<pre><code class=\"language-{1}\">{2}</code></pre>"
+  err: "(；￣д￣)<b> code:</b>\n<pre><code class=\"language-{1}\">{2}</code></pre>\n\n\
+    (¬_¬) <b>error:</b>\n<pre><code class=\"language-{3}\">{4}</code></pre>, baka"
+  compiling: "(╥﹏╥) <b>compiling code...</b>... wait properly"
+  no_compiler: "(；￣д￣) <b>{1} compiler is not installed on the system.</b>, baka"
+  time_exec: "\n(つ≧▽≦)つ <b>execution time: {}s</b>"
+  eval_result: "\n\n(￣^￣)<b> result:</b>\n<pre><code class=\"language-{}\">{}</code></pre>"
+  print_outp: "\n\n(￣^￣)<b> print result:</b>\n<pre><code class=\"language-{}\">{}</code></pre>"
+  _cmd_doc_e: "evaluates python code"
+  _cmd_doc_ebf: "evaluates brainf*ck code"
+  _cmd_doc_ec: "evaluates c code"
+  _cmd_doc_ecpp: "evaluates c++ code"
+  _cmd_doc_ers: "evaluates rust code"
+  _cmd_doc_eg: "evaluates go code"
+  _cmd_doc_enode: "evaluates node.js code"
+  _cmd_doc_ephp: "evaluates php code"
+  _cmd_doc_eruby: "evaluates ruby code"
+  _cls_doc: "evaluates code in various languages"
+
+translate:
+  name: "translator"
+  no_args: "(¬_¬) <b>no arguments provided</b>, baka"
+  error: "(¬_¬) <b>unable to translate text</b>, baka"
+  language: "en"
+  translated_text: "(；￣д￣) translated text:\n<blockquote>{tr_text}</blockquote>"
+  _cmd_doc_tr: "[language] [text] - translate text"
+  _cls_doc: "translates text (obviously)"
+
+quickstart:
+  name: "quickstart"
+  base: "(つ≧▽≦)つ <b>hello.</b> your <b>{}</b> userbot is now installed.\n\n(つ≧▽≦)つ\
+    \ <b>need help?</b> join <a href=\"https://t.me/heroku_talks\">our support chat</a>.\
+    \ we help <b>everyone</b>.\n\n(//ω//) <b>quick guide:</b>\n\n(1) <b>write</b>\
+    \ <code>.help</code> <b>to see the list of modules</b>\n(2) <b>write</b> <code>.help\
+    \ &lt;module name/command&gt;</code> <b>to see the description of the module</b>\n\
+    (3) <b>write</b> <code>.dlmod &lt;link&gt;</code> <b>to load a module from a link</b>\n\
+    (4) <b>write</b> <code>.loadmod</code> <b>in response to a file to load a module\
+    \ from it</b>\n(5) <b>write</b> <code>.unloadmod &lt;module name&gt;</code> <b>to\
+    \ unload a module</b>\n\n(｡•̀ᴗ-)(｀へ´*)ノ <b>heroku supports modules from hikka,\
+    \ friendly-telegram, and geektg, as well as its own.</b>... not that i care"
+  lavhost: "(//ω//) <b>your userbot is installed on lavhost</b>. make sure to join\
+    \ @lavhost for important notifications and updates. all questions regarding the\
+    \ platform should be asked in @lavhostchat.... not that i care"
+  language_saved: "(￣^￣) language saved!... not that i care"
+  language: "(￣^￣) english"
+  btn_support: "(￣^￣) support chat"
+  _cls_doc: "notifies user about userbot installation"
+
+$validators:
+  boolean: "boolean"
+  positive: "positive "
+  digits: " with exactly {digits} digits"
+  integer_min: "{sign}integer greater than {minimum}{digits}"
+  integer_range: "{sign}integer from {minimum} to {maximum}{digits}"
+  integer: "{sign}integer{digits}"
+  integer_max: "{sign}integer less than {maximum}{digits}... hmph"
+  choice: "one of the following: {possible}... hmph"
+  multichoice: "(；¬д¬) list of values, where each one must be one of: {possible},\
+    \ got it?"
+  each: " (each must be {each})"
+  fixed_len: " (exactly {fixed_len} pcs.)"
+  max_len: " (up to {max_len} pcs.)"
+  len_range: " (from {min_len} to {max_len} pcs.)"
+  min_len: " (at least {min_len} pcs.)"
+  series: "series of values{len}{each}, separated with «,»"
+  link: "link"
+  string_fixed_len: "string of length {length}"
+  string: "string"
+  string_max_len: "string of length up to {max_len}... hmph"
+  string_len_range: "(｀へ´*)ノ string of length from {min_len} to {max_len}"
+  string_min_len: "string of length at least {min_len}"
+  regex: "string matching pattern «{regex}»"
+  float_min: "{sign}float greater than {minimum}"
+  float_range: "{sign}float from {minimum} to {maximum}"
+  float: "{sign}float"
+  float_max: "{sign}float less than {maximum}... hmph"
+  union: "one of the following:\n"
+  empty: "empty value"
+  emoji_fixed_len: "{length} emojis"
+  emoji_len_range: "{min_len} to {max_len} emojis"
+  emoji_min_len: "at least {min_len} emoji"
+  emoji_max_len: "(｀へ´*)ノ no more than {max_len} emojis"
+  emoji: "emoji"
+  entity_like: "link to entity, username or telegram id"
+
+$inline:
+  opening_form: " <b>opening form...</b>... wait properly"
+  opening_gallery: " <b>opening gallery...</b>... wait properly"
+  opening_list: " <b>opening list...</b>... wait properly"
+  inline403: "(¬_¬) <b>you can't send inline units in this chat</b>, baka"
+  invoke_failed: "(¬_¬) <b>unit invoke failed! more info in logs</b>, baka"
+  invoke_failed_logs: "(¬_¬) <b>unit invoke failed!</b>\n\n(｀へ´*)ノ <b>logs:</b>\n\n\
+    <pre><code class=\"language-logs\">{}</code></pre>, baka"
+  show_inline_cmds: "(・_・)ノ show all available inline commands"
+  no_inline_cmds: "(¬_¬) you have no available commands, baka"
+  no_inline_cmds_msg: "<b>(╥﹏╥) there are no available inline commands or you lack\
+    \ access to them</b>, baka"
+  inline_cmds: "(｡•̀ᴗ-)(｀へ´*)ノ you have {} available command(-s)... hmph"
+  inline_cmds_msg: "<b>(｡•̀ᴗ-)(｀へ´*)ノ available inline commands:</b>\n\n{}"
+  run_command: "(；￣д￣) run command"
+  command_msg: "<b>(つ≧▽≦)つ command «{}»</b>\n\n<i>{}</i>"
+  command: "(つ≧▽≦)つ command «{}»"
+  button403: "(｀へ´*)ノ you are not allowed to press this button!"
+  keep_id: "(；¬д¬) do not remove id! {}"
+  no_query_results: "(¬_¬) <b>failed to create form</b>\n\npossible ways to fix the\
+    \ error:\n\n1. restart heroku: <code>{prefix}restart</code>\n\n2. enable inline\
+    \ mode for the bot: go to @botfather, send /mybots, click bot settings -> inline\
+    \ mode -> on\n\n3. create a new bot: send the command <code>{prefix}ch_heroku_bot</code>\
+    \ <@botname>, baka"
